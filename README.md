@@ -118,5 +118,4 @@ Feel free to reach out if you have any questions or would like to collaborate!
 This project is licensed under the MIT License - see the LICENSE file for details.
 
 ---
-
 > Built with React, Tailwind CSS, and Three.js
