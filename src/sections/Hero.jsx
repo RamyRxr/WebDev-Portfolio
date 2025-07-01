@@ -1,8 +1,36 @@
 import { words } from "../constants/index.js";
 import Button from "../components/Button.jsx";
 import HeroExperience from "../components/HeroModels/HeroExperience.jsx";
+import AnimatedCounter from "../components/AnimatedCounter.jsx";
+
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
 
 const Hero = () => {
+
+    useGSAP(() => {
+        
+        const ctx = gsap.context(() => {
+            gsap.fromTo('.hero-text h1',
+                {
+                    y: 50,
+                    opacity: 0,
+                    force3D: true 
+                },
+                {
+                    y: 0,
+                    opacity: 1,
+                    stagger: 0.2,
+                    duration: 1,
+                    ease: 'power2.out' 
+                }
+            );
+        });
+        
+        return () => ctx.revert(); 
+    });
+
+
     return (
         <section id="hero" className="relative overflow-hidden">
             <div className="absolute top-0 left-0 z-10">
@@ -10,9 +38,10 @@ const Hero = () => {
             </div>
 
             <div className="hero-layout">
+
                 {/*LEFT : HERO COntent*/}
                 <header className="flex flex-col justify-center md:w-full w-screen md:px-20 px-5">
-                    <div className="flex flex-col gap-7">
+                    <div className="flex flex-col gap-7 max-w-full">
                         <div className="hero-text">
                             <h1>
                                 Shaping
@@ -39,7 +68,7 @@ const Hero = () => {
                             <h1>that Deliver Results</h1>
                         </div>
 
-                        <p className="text-white-50 md:text-xl relative z-10 pointer-events-none">
+                        <p className="text-white-50 md:text-xl relative z-10 pointer-events-none max-w-xl break-words">
                             Hi, I'm Ramy, a front end developer with a passion for crafting
                             exceptional digital experiences. I specialize in transforming
                             ideas into real projects that deliver results.
@@ -54,14 +83,14 @@ const Hero = () => {
                 </header>
 
                 {/*RIGHT : HERO IMAGE*/}
-
-
-                <figure >
-                    <div className="hero-3d-layout border-red-200 border-2">
+                <figure>
+                    <div className="hero-3d-layout">
                         <HeroExperience />
                     </div>
                 </figure>
             </div>
+
+            <AnimatedCounter />
         </section>
     );
 };
