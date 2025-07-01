@@ -4,34 +4,38 @@ Welcome to my 3D portfolio — a modern, interactive space showcasing my web dev
 
 ![Portfolio Preview](./preview.png)
 
-## ✨ Current Features
+## ✨ Features Overview
 
-- 🎯 Interactive Hero section with animated word cycling
-- 🌐 Integrated 3D model scene in the Hero section
-- 🎨 Custom button component with advanced hover animations
-- 📱 Fully responsive design for all devices
-- 💫 Smooth animations and transitions
-- 🔢 Animated counter statistics with React CountUp
-- ✨ GSAP-powered title animations for smooth entrances
-- 🖼️ Project showcase section with scroll-triggered animations
-- 📱 Featured project displays with responsive layouts
+### Core Features
+- 🎯 **Interactive Hero Section** with animated word cycling and GSAP animations
+- 🌐 **3D Model Integration** through React Three Fiber
+- 🎨 **Custom UI Components** with advanced hover effects and animations
+- 📊 **Animated Statistics** with CountUp for dynamic number displays
+- 🖼️ **Project Showcase** with scroll-triggered reveal animations
+- 📱 **Fully Responsive Design** optimized for all device sizes
+
+### Animation Features
+- ✨ GSAP-powered title animations with staggered entrances
+- 🔄 Dynamic text cycling in hero section
+- 📜 ScrollTrigger-based animations for project reveals
+- 🔢 Numerical statistics with animated counting effect
+- 🌊 Smooth transitions between sections
 
 ## 🛠️ Tech Stack
 
-| Technology | Purpose |
-|------------|---------|
-| **React** | Frontend framework for the UI |
-| **Tailwind CSS** | Utility-first styling with custom components |
-| **Three.js** | 3D graphics rendering |
-| **React Three Fiber** | React renderer for Three.js |
-| **GLTFJSX** | Converting 3D models (.glb) to React components |
-| **React-Responsive** | Handling responsive behavior |
-| **GSAP** | Advanced animations for UI elements |
-| **ScrollTrigger** | Scroll-based animation triggers |
-| **React CountUp** | Animated numerical statistics |
+| Technology | Purpose | Implementation |
+|------------|---------|----------------|
+| **React** | Frontend framework | Component-based UI architecture |
+| **Tailwind CSS** | Styling | Utility-first approach with custom classes |
+| **Three.js** | 3D rendering | Core 3D graphics engine |
+| **React Three Fiber** | Three.js integration | React components for 3D elements |
+| **GSAP** | Animations | Advanced timeline-based animations |
+| **ScrollTrigger** | Scroll animations | Trigger animations on scroll |
+| **React CountUp** | Numerical animations | Animated number counting |
+| **GLTFJSX** | 3D model conversion | Converting .glb files to React components |
+| **React-Responsive** | Responsive design | Media queries for different devices |
 
 ## 🏗️ Project Structure
-
 ```
 📦 3D-Portfolio/
 ├── public/              # Static assets (3D models, images)
