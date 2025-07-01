@@ -13,6 +13,8 @@ Welcome to my 3D portfolio — a modern, interactive space showcasing my web dev
 - 💫 Smooth animations and transitions
 - 🔢 Animated counter statistics with React CountUp
 - ✨ GSAP-powered title animations for smooth entrances
+- 🖼️ Project showcase section with scroll-triggered animations
+- 📱 Featured project displays with responsive layouts
 
 ## 🛠️ Tech Stack
 
@@ -25,6 +27,7 @@ Welcome to my 3D portfolio — a modern, interactive space showcasing my web dev
 | **GLTFJSX** | Converting 3D models (.glb) to React components |
 | **React-Responsive** | Handling responsive behavior |
 | **GSAP** | Advanced animations for UI elements |
+| **ScrollTrigger** | Scroll-based animation triggers |
 | **React CountUp** | Animated numerical statistics |
 
 ## 🏗️ Project Structure
