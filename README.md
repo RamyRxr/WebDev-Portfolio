@@ -11,6 +11,8 @@ Welcome to my 3D portfolio — a modern, interactive space showcasing my web dev
 - 🎨 Custom button component with advanced hover animations
 - 📱 Fully responsive design for all devices
 - 💫 Smooth animations and transitions
+- 🔢 Animated counter statistics with React CountUp
+- ✨ GSAP-powered title animations for smooth entrances
 
 ## 🛠️ Tech Stack
 
@@ -22,6 +24,8 @@ Welcome to my 3D portfolio — a modern, interactive space showcasing my web dev
 | **React Three Fiber** | React renderer for Three.js |
 | **GLTFJSX** | Converting 3D models (.glb) to React components |
 | **React-Responsive** | Handling responsive behavior |
+| **GSAP** | Advanced animations for UI elements |
+| **React CountUp** | Animated numerical statistics |
 
 ## 🏗️ Project Structure
 
@@ -56,12 +60,14 @@ The site includes multiple animation types:
 - Text cycling animation in the hero headline
 - Custom button hover animations
 - Transition effects between sections
+- GSAP animations for smooth element entrances
 
 ### Custom UI Components
 
 - **Button Component**: Features gradient background and animated arrow on hover
 - **Hero Section**: Combines animated text with 3D scene integration
 - **Responsive Layout**: Adapts seamlessly from mobile to desktop
+- **CountUp Component**: Displays animated numerical statistics
 
 ## 🚀 Getting Started
 
@@ -95,6 +101,7 @@ The site includes multiple animation types:
 - Button component with custom animations
 - 3D model integration using gltfjsx and React Three Fiber
 - Responsive design implementation
+- GSAP animations for UI elements
 
 ### 🔄 In Progress
 - Additional portfolio sections (About, Projects, Contact)
