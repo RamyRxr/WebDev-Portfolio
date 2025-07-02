@@ -13,6 +13,10 @@ Welcome to my 3D portfolio — a modern, interactive space showcasing my web dev
 - 📊 **Animated Statistics** with CountUp for dynamic number displays
 - 🖼️ **Project Showcase** with scroll-triggered reveal animations
 - 📱 **Fully Responsive Design** optimized for all device sizes
+- ✨ **Interactive Glowing Cards** with mouse-following effects
+- 🏢 **Professional Experience Timeline** with scroll animations
+- 🔄 **Infinite Logo Carousel** with seamless looping animation
+- 🧩 **Feature Cards** showcasing key abilities and services
 
 ### Animation Features
 - ✨ GSAP-powered title animations with staggered entrances
@@ -20,6 +24,9 @@ Welcome to my 3D portfolio — a modern, interactive space showcasing my web dev
 - 📜 ScrollTrigger-based animations for project reveals
 - 🔢 Numerical statistics with animated counting effect
 - 🌊 Smooth transitions between sections
+- 🌟 Mouse-reactive glowing borders on cards
+- ⏱️ Timeline animations that respond to scroll position
+- 🔄 Optimized infinite marquee with no visible breaks
 
 ## 🛠️ Tech Stack
 
@@ -29,11 +36,12 @@ Welcome to my 3D portfolio — a modern, interactive space showcasing my web dev
 | **Tailwind CSS** | Styling | Utility-first approach with custom classes |
 | **Three.js** | 3D rendering | Core 3D graphics engine |
 | **React Three Fiber** | Three.js integration | React components for 3D elements |
-| **GSAP** | Animations | Advanced timeline-based animations |
-| **ScrollTrigger** | Scroll animations | Trigger animations on scroll |
+| **GSAP** | Animations | Advanced timeline-based animations with ScrollTrigger |
+| **ScrollTrigger** | Scroll animations | Trigger animations on scroll position |
 | **React CountUp** | Numerical animations | Animated number counting |
 | **GLTFJSX** | 3D model conversion | Converting .glb files to React components |
 | **React-Responsive** | Responsive design | Media queries for different devices |
+| **useRef Hook** | DOM references | Direct access to DOM elements for animations |
 
 ## 🏗️ Project Structure
 ```
@@ -51,6 +59,23 @@ Welcome to my 3D portfolio — a modern, interactive space showcasing my web dev
 │   └── index.css        # Global styles and Tailwind components
 └── package.json         # Project dependencies
 ```
+
+## ✨ New Components and Sections
+
+### GlowCard Component
+The **GlowCard** component features an animated hover effect that enhances user interaction. When hovered over, the card emits a glowing effect, drawing attention to the content. This component is designed to showcase key features or information in a visually appealing manner.
+
+### TitleHeader Component
+The **TitleHeader** component serves as a reusable header for various sections throughout the portfolio. It provides a consistent look and feel, ensuring that each section is clearly defined and visually appealing.
+
+### Experience Section
+The **Experience Section** highlights the user's professional journey and skills. It includes animations that engage users as they scroll, providing a dynamic way to present career milestones and achievements.
+
+### Feature Section
+The **Feature Section** showcases the main features of the portfolio. Each feature is presented with engaging animations that activate on scroll, making the content more interactive and visually appealing.
+
+### LogoSection
+The **LogoSection** displays various logos in a continuous marquee animation. This section utilizes GSAP for smooth transitions and animations, ensuring that the logos flow seamlessly across the screen without interruptions. The use of `useRef` allows for efficient DOM manipulation, enhancing performance.
 
 ## 💡 Implementation Details
 
@@ -75,6 +100,9 @@ The site includes multiple animation types:
 - **Hero Section**: Combines animated text with 3D scene integration
 - **Responsive Layout**: Adapts seamlessly from mobile to desktop
 - **CountUp Component**: Displays animated numerical statistics
+
+### GSAP and useRef
+The project leverages **GSAP** (GreenSock Animation Platform) for advanced animations throughout the portfolio. This library allows for smooth, high-performance animations that enhance user experience. The **useRef** hook is utilized to directly reference DOM elements, enabling precise control over animations and transitions.
 
 ## 🚀 Getting Started
 
