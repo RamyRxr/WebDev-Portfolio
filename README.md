@@ -17,6 +17,8 @@ Welcome to my 3D portfolio — a modern, interactive space showcasing my web dev
 - 🏢 **Professional Experience Timeline** with scroll animations
 - 🔄 **Infinite Logo Carousel** with seamless looping animation
 - 🧩 **Feature Cards** showcasing key abilities and services
+- 🛠️ **3D Tech Stack Display** with floating interactive models
+- 🧊 **Animated 3D Icons** with hover effects and realistic lighting
 
 ### Animation Features
 - ✨ GSAP-powered title animations with staggered entrances
@@ -27,6 +29,8 @@ Welcome to my 3D portfolio — a modern, interactive space showcasing my web dev
 - 🌟 Mouse-reactive glowing borders on cards
 - ⏱️ Timeline animations that respond to scroll position
 - 🔄 Optimized infinite marquee with no visible breaks
+- 💫 Floating 3D models with realistic physics
+- 🌓 Environment lighting and shadows for 3D elements
 
 ## 🛠️ Tech Stack
 
@@ -34,8 +38,9 @@ Welcome to my 3D portfolio — a modern, interactive space showcasing my web dev
 |------------|---------|----------------|
 | **React** | Frontend framework | Component-based UI architecture |
 | **Tailwind CSS** | Styling | Utility-first approach with custom classes |
-| **Three.js** | 3D rendering | Core 3D graphics engine |
-| **React Three Fiber** | Three.js integration | React components for 3D elements |
+| **Three.js** | 3D rendering | Core 3D graphics engine with custom materials and lighting |
+| **React Three Fiber** | Three.js integration | React components for 3D elements with Canvas |
+| **@react-three/drei** | 3D helpers | Environment, Float, OrbitControls, useGLTF utilities |
 | **GSAP** | Animations | Advanced timeline-based animations with ScrollTrigger |
 | **ScrollTrigger** | Scroll animations | Trigger animations on scroll position |
 | **React CountUp** | Numerical animations | Animated number counting |
@@ -46,18 +51,31 @@ Welcome to my 3D portfolio — a modern, interactive space showcasing my web dev
 ## 🏗️ Project Structure
 ```
 📦 3D-Portfolio/
-├── public/              # Static assets (3D models, images)
-│   └── images/          # Image assets used throughout the site
+├── public/                  # Static assets
+│   ├── images/              # Image assets (bg, logos, project images)
+│   └── models/              # 3D model files (.glb)
 ├── src/
-│   ├── components/      # Reusable UI components
-│   │   ├── Button.jsx   # Custom button with animations
-│   │   └── HeroModels/  # 3D models for the hero section
-│   ├── constants/       # App constants and configuration
-│   ├── sections/        # Main page sections
-│   │   └── hero.jsx     # Hero section with 3D integration
-│   ├── App.jsx          # Main application component
-│   └── index.css        # Global styles and Tailwind components
-└── package.json         # Project dependencies
+│   ├── components/          # Reusable UI components
+│   │   ├── AnimatedCounter.jsx  # Animated statistics counter
+│   │   ├── Button.jsx       # Custom animated button
+│   │   ├── GlowCard.jsx     # Interactive card with glowing effect
+│   │   ├── TitleHeader.jsx  # Section title component
+│   │   ├── TechIcon.jsx     # Technology icon component
+│   │   ├── NavBar.jsx       # Navigation bar with scroll effects
+│   │   └── HeroModels/      # 3D models for hero section
+│   ├── sections/            # Main page sections
+│   │   ├── hero.jsx         # Hero section with 3D scene
+│   │   ├── ShocaseSection.jsx  # Project showcase section
+│   │   ├── LogoSection.jsx  # Infinite logo carousel
+│   │   ├── ExperienceSection.jsx # Work experience with timeline
+│   │   ├── FeatureCards.jsx # Skills and abilities display
+│   │   └── TechStack.jsx    # Technology stack section with icons
+│   ├── constants/           # App constants and configuration
+│   │   └── index.js         # Exported data (words, counterItems, etc.)
+│   ├── App.jsx              # Main application component
+│   └── index.css            # Global styles and Tailwind components
+├── tailwind.config.js       # Tailwind configuration
+└── package.json             # Project dependencies
 ```
 
 ## ✨ New Components and Sections
