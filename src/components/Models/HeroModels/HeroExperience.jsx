@@ -3,7 +3,7 @@ import React from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
 import { useMediaQuery } from 'react-responsive';
-import { Room } from './Room.jsx'; // Adjust the import path as necessary
+import { Room } from './Room.jsx'; 
 import Stars from './Stars.jsx';
 import HeroLights from './HeroLights.jsx';
 
