@@ -12,7 +12,7 @@ import Contact from "./sections/Contact.jsx";
 import Footer from "./sections/Footer.jsx";
 
 const App = () => {
-    // Initialize EmailJS
+
     useEffect(() => {
         emailjs.init(import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY);
     }, []);
