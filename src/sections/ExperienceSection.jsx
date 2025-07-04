@@ -8,7 +8,7 @@ import GlowCard from "../components/GlowCard.jsx";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const Experience = () => {
+const ExperienceSection = () => {
   useGSAP(() => {
     // Add kill to prevent memory leaks and conflicts
     ScrollTrigger.getAll().forEach((st) => st.kill());
@@ -161,4 +161,4 @@ const Experience = () => {
   );
 };
 
-export default Experience;
+export default ExperienceSection;
