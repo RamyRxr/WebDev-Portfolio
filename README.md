@@ -261,6 +261,16 @@ export default defineConfig({
 })
 ```
 
+## 🔒 Environment Setup
+
+This project uses environment variables for sensitive information. To set up your local environment:
+
+1. Create a `.env` file in the root directory
+2. Copy the structure from `.env.example`
+3. Fill in your own API keys and credentials
+
+**IMPORTANT**: Never commit your `.env` file to version control. It's already added to `.gitignore` to prevent accidental commits.
+
 ## 🚀 Getting Started
 To run the project locally:
 1. Clone the repository.
