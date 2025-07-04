@@ -1,6 +1,7 @@
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useRef } from "react";
 
 import { expCards } from "../constants";
 import TitleHeader from "../components/TitleHeader.jsx";
@@ -9,13 +10,22 @@ import GlowCard from "../components/GlowCard.jsx";
 gsap.registerPlugin(ScrollTrigger);
 
 const ExperienceSection = () => {
+  // Add a ref to scope animations to this section only
+  const sectionRef = useRef(null);
+
   useGSAP(() => {
-    // Add kill to prevent memory leaks and conflicts
-    ScrollTrigger.getAll().forEach((st) => st.kill());
+    // Only kill ScrollTriggers that belong to this component
+    const mySection = sectionRef.current;
+    if (!mySection) return;
+
+    // Query elements only inside this section
+    const timelineCards = gsap.utils.toArray(".timeline-card", mySection);
+    const timelines = gsap.utils.toArray(".timeline", mySection);
+    const expTexts = gsap.utils.toArray(".expText", mySection);
 
     // Loop through each timeline card and animate them in
     // as the user scrolls to each card
-    gsap.utils.toArray(".timeline-card").forEach((card) => {
+    timelineCards.forEach((card) => {
       // Animate the card coming in from the left
       // and fade in
       gsap.from(card, {
@@ -43,29 +53,31 @@ const ExperienceSection = () => {
       });
     });
 
-    // Optimize timeline height animation
-    gsap.to(".timeline", {
-      // Set the origin of the animation to the bottom of the timeline
-      transformOrigin: "bottom bottom",
-      // Animate the timeline height over 1 second
-      ease: "power1.inOut",
-      // Trigger the animation when the timeline is at the top of the screen
-      // and end it when the timeline is at 70% down the screen
-      scrollTrigger: {
-        trigger: ".timeline",
-        start: "top center",
-        end: "70% center",
-        // Use scrub: true instead of onUpdate for better performance
-        scrub: 0.5,
-        markers: false,
-        preventOverlaps: true,
-      },
-      scaleY: 0, // Animate directly to 0 scale
+    // Optimize timeline height animation - scope to this section's timelines
+    timelines.forEach((timeline) => {
+      gsap.to(timeline, {
+        // Set the origin of the animation to the bottom of the timeline
+        transformOrigin: "bottom bottom",
+        // Animate the timeline height over 1 second
+        ease: "power1.inOut",
+        // Trigger the animation when the timeline is at the top of the screen
+        // and end it when the timeline is at 70% down the screen
+        scrollTrigger: {
+          trigger: timeline,
+          start: "top center",
+          end: "70% center",
+          // Use scrub: true instead of onUpdate for better performance
+          scrub: 0.5,
+          markers: false,
+          preventOverlaps: true,
+        },
+        scaleY: 0, // Animate directly to 0 scale
+      });
     });
 
     // Loop through each expText element and animate them in
     // as the user scrolls to each text element
-    gsap.utils.toArray(".expText").forEach((text) => {
+    expTexts.forEach((text) => {
       // Animate the text opacity from 0 to 1
       // and move it from the left to its final position
       // over 1 second with a power2 ease-in-out curve
@@ -91,12 +103,23 @@ const ExperienceSection = () => {
         },
       });
     });
+
+    // Return a cleanup function
+    return () => {
+      // Get all ScrollTrigger instances that belong to elements in this section
+      ScrollTrigger.getAll().forEach((st) => {
+        if (st.trigger && mySection.contains(st.trigger)) {
+          st.kill();
+        }
+      });
+    };
   }, []);
 
   return (
     <section
       id="experience"
       className="flex-center md:mt-40 mt-20 section-padding xl:px-0"
+      ref={sectionRef}
     >
       <div className="w-full h-full md:px-20 px-5">
         <TitleHeader
@@ -160,5 +183,7 @@ const ExperienceSection = () => {
     </section>
   );
 };
+
+
 
 export default ExperienceSection;
